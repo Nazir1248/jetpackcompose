@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">jetpackCompose</string>
+    <string name="default_web_client_id">580968281256-5beaam0qrsqik2bo7su9f4jk96ur9lkp.apps.googleusercontent.com</string>
 </resources>

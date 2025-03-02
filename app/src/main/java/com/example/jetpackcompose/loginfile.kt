@@ -80,37 +80,37 @@ fun  LoginScreen(){
 
                 Text(text = "Or sign in with")
 
-               Row(
-                       modifier = Modifier
-                               .fillMaxWidth()
-                               .padding(40.dp),
-                       horizontalArrangement = Arrangement.SpaceEvenly
-               ) {
-                       Image(painter = painterResource(id = R.drawable.img_1),
-                               contentDescription = "facebook",
-                               modifier = Modifier
-                                       .size(60.dp)
-                                       .clickable {
+                Row(
+                        modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(40.dp),
+                        horizontalArrangement = Arrangement.SpaceEvenly
+                ) {
+                        Image(painter = painterResource(id = R.drawable.img_1),
+                                contentDescription = "facebook",
+                                modifier = Modifier
+                                        .size(60.dp)
+                                        .clickable {
 //                                        facebook clicked
-                                       }
-                       )
-                       Image(painter = painterResource(id = R.drawable.img_2),
-                               contentDescription = "twitter",
-                               modifier = Modifier
-                                       .size(60.dp)
-                                       .clickable {
+                                        }
+                        )
+                        Image(painter = painterResource(id = R.drawable.img_2),
+                                contentDescription = "twitter",
+                                modifier = Modifier
+                                        .size(60.dp)
+                                        .clickable {
 //                                        facebook clicked
-                                       }
-                       )
-                       Image(painter = painterResource(id = R.drawable.img_3),
-                               contentDescription = "Google",
-                               modifier = Modifier
-                                       .size(60.dp)
-                                       .clickable {
+                                        }
+                        )
+                        Image(painter = painterResource(id = R.drawable.img_3),
+                                contentDescription = "Google",
+                                modifier = Modifier
+                                        .size(60.dp)
+                                        .clickable {
 //                                        facebook clicked
-                                       }
-                       )
-               }
+                                        }
+                        )
+                }
 
         }
 }

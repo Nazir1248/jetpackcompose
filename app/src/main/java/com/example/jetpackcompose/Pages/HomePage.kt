@@ -14,26 +14,54 @@ import androidx.navigation.NavHostController
 import com.example.jetpackcompose.AuthState
 import com.example.jetpackcompose.AuthViewModel
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.MutableLiveData
+import androidx.navigation.compose.rememberNavController
 
-
+//@Composable
+//fun HomePage(modifier: Modifier=Modifier, navController: NavHostController, authViewModel: AuthViewModel){
+//
+//    val authState = authViewModel.authState.observeAsState()
+//
+//    LaunchedEffect(authState.value) {
+//        when(authState.value){
+//            is AuthState.Unauthenticated -> {navController.navigate("Login")}
+//            else -> Unit
+//        }
+//    }
+//    Column (modifier = modifier.fillMaxSize(),
+//        verticalArrangement = Arrangement.Center,
+//        horizontalAlignment = Alignment.CenterHorizontally
+//    )
+//    {
+//        Text(text = "Home Page",fontSize =32.sp)
+//        TextButton(onClick = {
+//            authViewModel.signout()
+//        }) {
+//            Text(text = "Sign Out")
+//        }
+//    }
+//}
 
 @Composable
-fun HomePage(modifier: Modifier=Modifier, navController: NavHostController, authViewModel: AuthViewModel){
+fun HomePage(modifier: Modifier = Modifier, navController: NavHostController, authViewModel: AuthViewModel) {
 
     val authState = authViewModel.authState.observeAsState()
 
     LaunchedEffect(authState.value) {
-        when(authState.value){
-            is AuthState.Unauthenticated -> {navController.navigate("Login")}
+        when(authState.value) {
+            is AuthState.Unauthenticated -> { navController.navigate("Login") }
+            is AuthState.Authenticated -> { navController.navigate("dashboard") }
             else -> Unit
         }
     }
-    Column (modifier = modifier.fillMaxSize(),
+
+    Column(
+        modifier = modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
-    )
-    {
-        Text(text = "Home Page",fontSize =32.sp)
+    ) {
+        Text(text = "Home Page", fontSize = 32.sp)
         TextButton(onClick = {
             authViewModel.signout()
         }) {
